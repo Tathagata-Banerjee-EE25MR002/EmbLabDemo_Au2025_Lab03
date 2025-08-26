@@ -19,7 +19,7 @@ int main(void)
         uint8_t sw2 = GPIO_PORTF_DATA_R & 0x01;  // Read PF0
 
         // If any switch is pressed
-        if (sw1 == 0 && sw2 == 0)
+        if (sw1 == 0 || sw2 == 0)
         {
             // Change LED state
             led_state = led_state + 1;
