@@ -14,16 +14,16 @@ int main(void)
 
     while(1){
         uint8_t sw1 = GPIO_PORTF_DATA_R & 0x10;  // Read PF4
-        if (sw1 ==0){
-            GPIO_PORTF_DATA_R = 0x02;
+        if (sw1==0 && sw2 ==0){
+            GPIO_PORTF_DATA_R = 0x06;
         }
         
         else if (sw2 ==0){
             GPIO_PORTF_DATA_R = 0x04;
         }
         
-        else if (sw1==0 && sw2 ==0){
-            GPIO_PORTF_DATA_R = 0x06;
+        else if (sw1==0){
+            GPIO_PORTF_DATA_R = 0x02;
         }
         
         else
